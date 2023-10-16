@@ -7,11 +7,18 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Main from './components/Layout/Main.jsx';
+import Typography from './components/Typograpy/Typography.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    children:[
+      {
+        path:'/typography',
+        element:<Typography></Typography>
+      }
+    ]
   },
 ]);
 

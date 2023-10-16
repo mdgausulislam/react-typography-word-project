@@ -1,17 +1,19 @@
 import React from 'react';
+import Header from '../Header/Header';
+import { Outlet } from 'react-router-dom';
 
 const Main = () => {
     return (
-        <div className='container grid grid-cols-2 gap-96'>
+        <div className='grid grid-cols-2 gap-96 mx-8 mt-8'>
             <div>
-                <h1>Typography</h1>
-
+                <Header></Header>
+                <Outlet></Outlet>
             </div>
             <div>
-                <h1>Text</h1>
-
+                <h1>hemonto</h1>
             </div>
-            
+
+
         </div>
     );
 };

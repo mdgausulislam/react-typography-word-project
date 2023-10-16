@@ -1,0 +1,8 @@
+.icon-image a{
+    height: 35px;
+    width: 35px;
+    padding: 3px;
+    border: 1px solid gainsboro;
+    align-items: center;
+    stroke: white;
+}
