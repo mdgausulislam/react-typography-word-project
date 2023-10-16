@@ -9,17 +9,20 @@ const Header = ({
     onFontFamilyChange,
     onScreenSizeChange,
     onTextSizeChange,
-    onWeightChange, // Add the onWeightChange prop
+    onWeightChange,
     selectedFontFamily,
     screenSize,
     textSize,
-    selectedWeight, // Pass selectedWeight
-}) => {
+    selectedWeight,
+}) =>{
     const [isPopupOpen, setPopupOpen] = useState(false);
 
     const togglePopup = () => {
         setPopupOpen(!isPopupOpen);
     };
+
+
+
     return (
         <div className='flex items-center justify-between gap-36'>
             <h2 className='text-2xl'>Typography</h2>
@@ -39,9 +42,9 @@ const Header = ({
                 onFontFamilyChange={onFontFamilyChange}
                 onScreenSizeChange={onScreenSizeChange}
                 onTextSizeChange={onTextSizeChange}
-                onWeightChange={onWeightChange} // Pass the onWeightChange function
+                onWeightChange={onWeightChange}
                 screenSize={screenSize}
-                selectedWeight={selectedWeight} // Pass selected weight
+                selectedWeight={selectedWeight}
             />
 
         </div>

@@ -28,7 +28,7 @@ const Main = () => {
 
 
     return (
-        <div className='grid grid-cols-2 gap-96 mx-8 mt-8'>
+        <div className='grid grid-cols-2 gap-96 mx-8 mt-2'>
             <div>
                 <Header
                     onFontFamilyChange={handleFontFamilyChange}
