@@ -1,0 +1,14 @@
+.serif {
+    font-family: Serif, sans-serif;
+  }
+  
+  .arial {
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+  
+  .roboto {
+    font-family: 'Roboto', sans-serif; 
+  }
+  
+  /* Add more classes for other font families if needed */
+  
