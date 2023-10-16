@@ -43,7 +43,7 @@ const Main = () => {
                 <Outlet />
             </div>
             <div className={`text ${selectedFontFamily}`} style={{ fontSize: `${screenSize} px`, fontWeight: selectedWeight }}>
-                <h1 style={{ fontSize: `${textSize}px`, fontWeight: selectedWeight }}>Hemonto</h1>
+                <h1 style={{ fontSize: `${textSize}px`, fontWeight: selectedWeight }}>I am Md Gousul Islam Hemonto. I completed my BSc in CSE of Green University of Bangladesh.I am a Front-end Developer. I skilled my Knowledge (HTML, CSS(Tailwind, Bootstrap), Javascript, and ReactJS). I  learning skills in ExpressJS, NodeJs, and MongoDB. </h1>
             </div>
         </div>
     );

@@ -55,7 +55,7 @@ const Typography = ({
                         <label htmlFor="fontFamily" className="block  text-xs text-gray-900 dark:text-white">Family</label>
                         <select
                             id="fontFamily"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 block w-40 h-5"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 block w-40 h-5  text-xs"
                             value={selectedFontFamily}
                             onChange={(e) => handleFontFamilyChange(e.target.value)}
                         >
@@ -92,7 +92,7 @@ const Typography = ({
                             value={textSize}
                             onChange={handleTextSizeChange}
                         />
-                        <input className=' h-4 w-12 border-2 rounded-lg' type="text" value={textSize} readOnly />
+                        <input className=' h-4 text-xs w-12 border-2 rounded-lg' type="text" value={textSize} readOnly />
                     </div>
                     <div className="flex items-center justify-between mt-1">
                         <label htmlFor="fontWeight" className="block text-xs  text-gray-900 dark:text-white">
@@ -100,7 +100,7 @@ const Typography = ({
                         </label>
                         <select
                             id="fontWeight"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 block w-40 h-5"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 block w-40 h-5 text-xs"
                             value={selectedWeight}
                             onChange={(e) => onWeightChange(e.target.value)} // Use onWeightChange
                         >
@@ -115,11 +115,11 @@ const Typography = ({
                         </label>
                         <select
                             id="fontWeight"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 block w-40 h-5"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 block w-40 h-5 text-xs"
                         >
-                            <option value="normal">Default</option>
-                            <option value="bold">Bold</option>
-                            <option value="semibold">Semi Bold</option>
+                            <option value="default">Default</option>
+                            <option value="upperCase">Upper Case</option>
+                            <option value="lowerCase">Lower Case</option>
                         </select>
                     </div>
                     <div className="flex items-center justify-between mt-1">
@@ -128,11 +128,11 @@ const Typography = ({
                         </label>
                         <select
                             id="fontWeight"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 block w-40 h-5"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 block w-40 h-5 text-xs"
                         >
-                            <option value="normal">Default</option>
-                            <option value="bold">Bold</option>
-                            <option value="semibold">Semi Bold</option>
+                            <option value="normal">Normal</option>
+                            <option value="italic">Italic</option>
+
                         </select>
                     </div>
                     <div className="flex items-center justify-between mt-1">
@@ -141,11 +141,11 @@ const Typography = ({
                         </label>
                         <select
                             id="fontWeight"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 block w-40 h-5"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 block w-40 h-5 text-xs"
                         >
-                            <option value="normal">Default</option>
-                            <option value="bold">Bold</option>
-                            <option value="semibold">Semi Bold</option>
+                            <option value="none">None</option>
+                            <option value="underline">Underline</option>
+                            <option value="line-through">Line-Through</option>
                         </select>
                     </div>
                     <div className='flex items-center justify-between mt-1'>
@@ -155,13 +155,11 @@ const Typography = ({
                         <select
                             id="screenSize"
                             className="text-gray-900 text-xs rounded-lg block w-15 h-4"
-                            value={selectedScreenSize}
-                            onChange={(e) => handleScreenSizeChange(e.target.value)}
                         >
-                            <option className='text-xs' value="100">100</option>
-                            <option className='text-xs' value="150">150</option>
-                            <option className='text-xs' value="200">200</option>
-                            <option className='text-xs' value="250">250</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                            <option value="200">200</option>
+                            <option value="250">250</option>
                         </select>
                     </div>
 
@@ -172,10 +170,8 @@ const Typography = ({
                             min="1"
                             max="30"
                             step="1"
-                            value={textSize}
-                            onChange={handleTextSizeChange}
                         />
-                        <input className=' h-5 w-12 border-2 rounded-lg' type="text" value={textSize} readOnly />
+                        <input className=' h-5 text-xs w-12 border-2 rounded-lg' type="text"/>
                     </div>
                     <div className='flex items-center justify-between mt-1'>
                         <label htmlFor="screenSize" className="block  text-xs  text-gray-900 dark-text-white">
@@ -184,27 +180,23 @@ const Typography = ({
                         <select
                             id="screenSize"
                             className="text-gray-900 text-xs rounded-lg block w-15 h-4"
-                            value={selectedScreenSize}
-                            onChange={(e) => handleScreenSizeChange(e.target.value)}
                         >
-                            <option className='text-xs' value="100">100</option>
-                            <option className='text-xs' value="150">150</option>
-                            <option className='text-xs' value="200">200</option>
-                            <option className='text-xs' value="250">250</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                            <option value="200">200</option>
+                            <option value="250">250</option>
                         </select>
                     </div>
 
                     <div className='flex items-center justify-between mt-1'>
-                        <input className='h-1'
+                        <input className='h-1 text-xs'
                             type="range"
                             id="textSize"
                             min="1"
-                            max="30"
+                            max="20"
                             step="1"
-                            value={textSize}
-                            onChange={handleTextSizeChange}
                         />
-                        <input className=' h-5 w-12 border-2 rounded-lg' type="text" value={textSize} readOnly />
+                        <input className=' h-5 text-xs w-12 border-2 rounded-lg' type="text" />
                     </div>
                     <div className='flex items-center justify-between mt-1'>
                         <label htmlFor="screenSize" className="block  text-xs  text-gray-900 dark-text-white">
@@ -213,13 +205,11 @@ const Typography = ({
                         <select
                             id="screenSize"
                             className="text-gray-900 text-xs rounded-lg block w-15 h-4"
-                            value={selectedScreenSize}
-                            onChange={(e) => handleScreenSizeChange(e.target.value)}
                         >
-                            <option className='text-xs' value="100">100</option>
-                            <option className='text-xs' value="150">150</option>
-                            <option className='text-xs' value="200">200</option>
-                            <option className='text-xs' value="250">250</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                            <option value="200">200</option>
+                            <option value="250">250</option>
                         </select>
                     </div>
 
@@ -230,12 +220,10 @@ const Typography = ({
                             min="1"
                             max="30"
                             step="1"
-                            value={textSize}
-                            onChange={handleTextSizeChange}
                         />
-                        <input className=' h-5 w-12 border-2 rounded-lg' type="text" value={textSize} readOnly />
+                        <input className=' h-5 text-xs w-12 border-2 rounded-lg' type="text" />
                     </div>
-                    
+
 
                 </div>
             </div>
