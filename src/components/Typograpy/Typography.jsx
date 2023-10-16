@@ -14,10 +14,20 @@ const Typography = ({
     onWeightChange,
     screenSize,
     selectedWeight,
+    selectedTransform: propSelectedTransform, // Rename the prop
 }) => {
     const [selectedFontFamily, setSelectedFontFamily] = useState('serif');
     const [selectedScreenSize, setSelectedScreenSize] = useState(100);
     const [textSize, setTextSize] = useState(16);
+    const [selectedTransform, setSelectedTransform] = useState('default'); // Add this state variable
+
+  
+    const handleTransformChange = (event) => {
+        const newTransform = event.target.value;
+        // Use the local variable or the prop as needed
+        const selectedTransform = newTransform || propSelectedTransform;
+        setSelectedTransform(selectedTransform);
+    };
 
     const handleTextSizeChange = (event) => {
         const newSize = event.target.value;
@@ -110,12 +120,14 @@ const Typography = ({
                         </select>
                     </div>
                     <div className="flex items-center justify-between mt-1">
-                        <label htmlFor="fontWeight" className="block text-xs  text-gray-900 dark:text-white">
+                        <label id="transform" className="block text-xs  text-gray-900 dark:text-white">
                             Transform
                         </label>
                         <select
-                            id="fontWeight"
+                           id="transform"
                             className="bg-gray-50 border border-gray-300 text-gray-900 block w-40 h-5 text-xs"
+                            value={selectedTransform}
+                            onChange={handleTransformChange} //
                         >
                             <option value="default">Default</option>
                             <option value="upperCase">Upper Case</option>

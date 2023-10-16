@@ -14,6 +14,7 @@ const Header = ({
     screenSize,
     textSize,
     selectedWeight,
+    selectedTransform, // Add selectedTransform prop
 }) =>{
     const [isPopupOpen, setPopupOpen] = useState(false);
 
@@ -25,7 +26,9 @@ const Header = ({
 
     return (
         <div className='flex items-center justify-between gap-36'>
-            <h2 className='text-2xl'>Typography</h2>
+           <h2 className={`text-2xl ${selectedTransform === 'upperCase' ? 'uppercase' : ''}`}>
+                Typography
+            </h2>
             <div className='flex icon-image'>
                 <ActiveLink to="/" className='flex items-center justify-center'>
                     <GlobeAltIcon className="w-6 h-6" />
@@ -45,6 +48,7 @@ const Header = ({
                 onWeightChange={onWeightChange}
                 screenSize={screenSize}
                 selectedWeight={selectedWeight}
+                selectedTransform={selectedTransform} // Pass selectedTransform to Typography
             />
 
         </div>
