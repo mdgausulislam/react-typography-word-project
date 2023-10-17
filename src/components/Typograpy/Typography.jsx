@@ -12,21 +12,21 @@ const Typography = ({
     onScreenSizeChange,
     onTextSizeChange,
     onWeightChange,
+    onTransformChange,
     screenSize,
     selectedWeight,
-    selectedTransform: propSelectedTransform, // Rename the prop
+    selectedTransform: propSelectedTransform,
 }) => {
     const [selectedFontFamily, setSelectedFontFamily] = useState('serif');
     const [selectedScreenSize, setSelectedScreenSize] = useState(100);
     const [textSize, setTextSize] = useState(16);
-    const [selectedTransform, setSelectedTransform] = useState('default'); // Add this state variable
+    const [selectedTransform, setSelectedTransform] = useState('default');
 
-  
     const handleTransformChange = (event) => {
         const newTransform = event.target.value;
-        // Use the local variable or the prop as needed
         const selectedTransform = newTransform || propSelectedTransform;
         setSelectedTransform(selectedTransform);
+        onTransformChange(selectedTransform);
     };
 
     const handleTextSizeChange = (event) => {

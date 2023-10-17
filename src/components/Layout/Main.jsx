@@ -13,7 +13,7 @@ const Main = () => {
 
     const handleTransformChange = (transform) => {
         setSelectedTransform(transform);
-    }
+    };
 
     const handleScreenSizeChange = (size) => {
         setScreenSize(size);
@@ -31,29 +31,28 @@ const Main = () => {
         setSelectedWeight(weight);
     };
 
-
     return (
         <div className='grid grid-cols-2 gap-96 mx-8 mt-2'>
             <div>
-                 <Header
+                  <Header
                     onFontFamilyChange={handleFontFamilyChange}
                     onScreenSizeChange={handleScreenSizeChange}
                     onTextSizeChange={handleTextSizeChange}
                     onWeightChange={handleWeightChange}
-                    onTransformChange={handleTransformChange} // Pass handleTransformChange
+                    onTransformChange={handleTransformChange}
                     selectedFontFamily={selectedFontFamily}
                     screenSize={screenSize}
                     textSize={textSize}
                     selectedWeight={selectedWeight}
-                    selectedTransform={selectedTransform} // Pass selectedTransform
+                    selectedTransform={selectedTransform}
                 />
                 <Outlet />
             </div>
             <div className={`text ${selectedFontFamily}`} style={{ fontSize: `${screenSize}px`, fontWeight: selectedWeight, textTransform: selectedTransform }}>
-                <h1 style={{ fontSize: `${textSize}px`, fontWeight: selectedWeight }}>
+                <h1 style={{ fontSize: `${textSize}px`, fontWeight: selectedWeight, textTransform: selectedTransform === 'upperCase' ? 'uppercase' : selectedTransform === 'lowerCase' ? 'lowercase' : 'none' }}>
                     I am Md Gousul Islam Hemonto.
                     I completed my BSc in CSE of Green University of Bangladesh.
-                    I am a Front-end Developer. I skilled my Knowledge (HTML, CSS(Tailwind, Bootstrap),
+                    I am a Front-end Developer. I skilled my Knowledge (HTML, CSS(Tailwind, Bootstrap), 
                     Javascript, and ReactJS). I am learning skills in ExpressJS, NodeJs, and MongoDB.
                 </h1>
             </div>

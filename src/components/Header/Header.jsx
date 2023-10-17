@@ -10,12 +10,14 @@ const Header = ({
     onScreenSizeChange,
     onTextSizeChange,
     onWeightChange,
+    onTransformChange, // Added onTransformChange prop
     selectedFontFamily,
     screenSize,
     textSize,
     selectedWeight,
-    selectedTransform, // Add selectedTransform prop
-}) =>{
+    selectedTransform}) => {
+
+
     const [isPopupOpen, setPopupOpen] = useState(false);
 
     const togglePopup = () => {
@@ -26,7 +28,7 @@ const Header = ({
 
     return (
         <div className='flex items-center justify-between gap-36'>
-           <h2 className={`text-2xl ${selectedTransform === 'upperCase' ? 'uppercase' : ''}`}>
+            <h2 className={`text-2xl`}>
                 Typography
             </h2>
             <div className='flex icon-image'>
@@ -46,11 +48,11 @@ const Header = ({
                 onScreenSizeChange={onScreenSizeChange}
                 onTextSizeChange={onTextSizeChange}
                 onWeightChange={onWeightChange}
+                onTransformChange={onTransformChange}
                 screenSize={screenSize}
                 selectedWeight={selectedWeight}
-                selectedTransform={selectedTransform} // Pass selectedTransform to Typography
+                selectedTransform={selectedTransform}
             />
-
         </div>
     );
 };
