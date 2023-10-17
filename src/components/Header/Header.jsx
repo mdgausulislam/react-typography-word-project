@@ -10,12 +10,22 @@ const Header = ({
     onScreenSizeChange,
     onTextSizeChange,
     onWeightChange,
-    onTransformChange, // Added onTransformChange prop
+    onTransformChange,
+    onStyleChange, // Added onStyleChange prop
+    onDecorationChange, // Add onDecorationChange prop
+    onLineHeightChange, // Define onLineHeightChange prop
+    onLetterSpacingChange, // Added onLetterSpacingChange prop
     selectedFontFamily,
     screenSize,
     textSize,
     selectedWeight,
-    selectedTransform}) => {
+    selectedTransform,
+    selectedStyle,
+    selectedDecoration, // Add selectedDecoration prop
+    selectedLineHeight,
+    selectedLetterSpacing, // Added selectedLetterSpacing prop
+    
+}) => {
 
 
     const [isPopupOpen, setPopupOpen] = useState(false);
@@ -49,9 +59,17 @@ const Header = ({
                 onTextSizeChange={onTextSizeChange}
                 onWeightChange={onWeightChange}
                 onTransformChange={onTransformChange}
+                onStyleChange={onStyleChange}
+                onDecorationChange={onDecorationChange} // Pass the onDecorationChange prop
+                onLineHeightChange={onLineHeightChange} // Pass the onLineHeightChange prop
+                onLetterSpacingChange={onLetterSpacingChange} 
                 screenSize={screenSize}
                 selectedWeight={selectedWeight}
                 selectedTransform={selectedTransform}
+                selectedStyle={selectedStyle}
+                selectedDecoration={selectedDecoration} // Pass the selectedDecoration prop
+                selectedLineHeight={selectedLineHeight} // Pass the selectedLineHeight prop
+                selectedLetterSpacing={selectedLetterSpacing} 
             />
         </div>
     );
