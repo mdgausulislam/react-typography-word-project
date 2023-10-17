@@ -165,11 +165,10 @@ const Typography = ({
                             id="fontWeight"
                             className="bg-gray-50 border border-gray-300 text-gray-900 block w-40 h-5 text-xs"
                             value={selectedWeight}
-                            onChange={(e) => onWeightChange(e.target.value)} // Use onWeightChange
+                            onChange={(e) => onWeightChange(e.target.value)}
                         >
                             <option value="normal">Normal</option>
                             <option value="bold">Bold</option>
-                            <option value="semibold">Semi Bold</option>
                         </select>
                     </div>
                     <div className="flex items-center justify-between mt-1">

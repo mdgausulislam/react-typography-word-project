@@ -80,7 +80,7 @@ const Main = () => {
                     selectedDecoration={selectedDecoration} // Pass the selectedDecoration state
                     selectedLineHeight={selectedLineHeight} // Add this
                     selectedLetterSpacing={selectedLetterSpacing}
-                    selectedWordSpacing={selectedWordSpacing} // Pass the selectedWordSpacing state
+                    selectedWordSpacing={selectedWordSpacing}
                 />
                 <Outlet />
             </div>

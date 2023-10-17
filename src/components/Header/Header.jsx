@@ -25,7 +25,7 @@ const Header = ({
     selectedDecoration, // Add selectedDecoration prop
     selectedLineHeight,
     selectedLetterSpacing, // Added selectedLetterSpacing prop
-    selectedWordSpacing, // Add selectedWordSpacing prop
+    selectedWordSpacing, // Receive selectedWordSpacing prop
 }) => {
 
 
