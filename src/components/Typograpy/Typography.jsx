@@ -17,6 +17,7 @@ const Typography = ({
     onDecorationChange, // Add onDecorationChange prop
     onLineHeightChange, // Add onLineHeightChange prop
     onLetterSpacingChange, // Added onLetterSpacingChange prop
+    onWordSpacingChange,
     screenSize,
     selectedWeight,
     selectedTransform: propSelectedTransform,
@@ -24,14 +25,26 @@ const Typography = ({
     selectedDecoration, // Add selectedDecoration prop
     selectedLineHeight, // Add selectedLineHeight prop
     selectedLetterSpacing, // Added selectedLetterSpacing prop
+    selectedWordSpacing, // Add selectedWordSpacing prop
 }) => {
     const [selectedFontFamily, setSelectedFontFamily] = useState('serif');
-    const [selectedScreenSize, setSelectedScreenSize] = useState("px");
+    const [selectedScreenSize, setSelectedScreenSize] = useState("100");
     const [textSize, setTextSize] = useState(16);
     const [selectedTransform, setSelectedTransform] = useState('default');
     const [lineHeight, setLineHeight] = useState(1);
     const [letterSpacing, setLetterSpacing] = useState(0); // Initialize letter spacing state
+
+
     // const [selectedStyle, setSelectedStyle] = useState('normal'); // Add this state
+
+    const [wordSpacing, setWordSpacing] = useState(0);
+
+    const handleWordSpacingChange = (event) => {
+        const newWordSpacing = event.target.value;
+        setWordSpacing(newWordSpacing);
+        onWordSpacingChange(newWordSpacing);
+    };
+
 
 
     const handleLetterSpacingChange = (event) => {
@@ -124,7 +137,7 @@ const Typography = ({
                             value={selectedScreenSize}
                             onChange={(e) => handleScreenSizeChange(e.target.value)}
                         >
-                            <option className='text-xs' value="px">px</option>
+                            <option className='text-xs' value="100">px</option>
                             <option className='text-xs' value="100">100</option>
                             <option className='text-xs' value="150">150</option>
                             <option className='text-xs' value="200">200</option>
@@ -263,7 +276,7 @@ const Typography = ({
                             id="screenSize"
                             className="text-gray-900 text-xs rounded-lg block w-15 h-4"
                         >
-                            <option value="px">px</option>
+                            <option value="100">px</option>
 
                         </select>
                     </div>
@@ -272,14 +285,21 @@ const Typography = ({
                         <label htmlFor="screenSize" className="block  text-xs  text-gray-900 dark-text-white">
                             Word Spacing <span><FontAwesomeIcon icon={faDisplay} /></span>
                         </label>
-                        <input className='h-1'
+                        <input
                             type="range"
-                            id="textSize"
-                            min="1"
-                            max="30"
+                            id="wordSpacing"
+                            min="0"
+                            max="20"
                             step="1"
+                            value={wordSpacing}
+                            onChange={handleWordSpacingChange}
                         />
-                        <input className=' h-5 text-xs w-12 border-2 rounded-lg' type="text" />
+                        <input
+                            className="h-5 text-xs w-12 border-2 rounded-lg text-center"
+                            type="text"
+                            value={wordSpacing}
+                            readOnly
+                        />
                     </div>
 
 

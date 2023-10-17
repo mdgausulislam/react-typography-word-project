@@ -15,6 +15,7 @@ const Header = ({
     onDecorationChange, // Add onDecorationChange prop
     onLineHeightChange, // Define onLineHeightChange prop
     onLetterSpacingChange, // Added onLetterSpacingChange prop
+    onWordSpacingChange, // Add onWordSpacingChange prop
     selectedFontFamily,
     screenSize,
     textSize,
@@ -24,7 +25,7 @@ const Header = ({
     selectedDecoration, // Add selectedDecoration prop
     selectedLineHeight,
     selectedLetterSpacing, // Added selectedLetterSpacing prop
-    
+    selectedWordSpacing, // Add selectedWordSpacing prop
 }) => {
 
 
@@ -62,6 +63,7 @@ const Header = ({
                 onStyleChange={onStyleChange}
                 onDecorationChange={onDecorationChange} // Pass the onDecorationChange prop
                 onLineHeightChange={onLineHeightChange} // Pass the onLineHeightChange prop
+                onWordSpacingChange={onWordSpacingChange} // Pass the onWordSpacingChange prop
                 onLetterSpacingChange={onLetterSpacingChange} 
                 screenSize={screenSize}
                 selectedWeight={selectedWeight}
@@ -70,6 +72,7 @@ const Header = ({
                 selectedDecoration={selectedDecoration} // Pass the selectedDecoration prop
                 selectedLineHeight={selectedLineHeight} // Pass the selectedLineHeight prop
                 selectedLetterSpacing={selectedLetterSpacing} 
+                selectedWordSpacing={selectedWordSpacing} // Pass the selectedWordSpacing prop
             />
         </div>
     );

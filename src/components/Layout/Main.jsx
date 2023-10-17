@@ -14,7 +14,12 @@ const Main = () => {
     const [selectedDecoration, setSelectedDecoration] = useState('normal'); // Add this state
     const [selectedLineHeight, setSelectedLineHeight] = useState(1);
     const [selectedLetterSpacing, setSelectedLetterSpacing] = useState(0); // Initialize letter spacing state
+    const [selectedWordSpacing, setSelectedWordSpacing] = useState(0);
 
+
+    const handleWordSpacingChange = (wordSpacing) => {
+        setSelectedWordSpacing(wordSpacing);
+    };
 
     const handleLetterSpacingChange = (letterSpacing) => {
         setSelectedLetterSpacing(letterSpacing);
@@ -65,6 +70,7 @@ const Main = () => {
                     onDecorationChange={handleDecorationChange}
                     onLineHeightChange={handleLineHeightChange} // Add this
                     onLetterSpacingChange={handleLetterSpacingChange} 
+                    onWordSpacingChange={handleWordSpacingChange} // Add this prop
                     selectedFontFamily={selectedFontFamily}
                     screenSize={screenSize}
                     textSize={textSize}
@@ -74,6 +80,7 @@ const Main = () => {
                     selectedDecoration={selectedDecoration} // Pass the selectedDecoration state
                     selectedLineHeight={selectedLineHeight} // Add this
                     selectedLetterSpacing={selectedLetterSpacing}
+                    selectedWordSpacing={selectedWordSpacing} // Pass the selectedWordSpacing state
                 />
                 <Outlet />
             </div>
@@ -85,13 +92,15 @@ const Main = () => {
                     textDecoration: selectedDecoration === 'underline' ? 'underline' : 'none',
                     textTransform: selectedTransform,
                     lineHeight: selectedLineHeight, // Set the line-height here
-                    letterSpacing: `${selectedLetterSpacing}px` // Set the letter spacing here
+                    letterSpacing: `${selectedLetterSpacing}px`, // Set the letter spacing here
+                    wordSpacing: `${selectedWordSpacing}px`,
                 }}>
                 <h1 style={{
                     fontSize: `${textSize}px`,
                     fontWeight: selectedWeight,
                     textTransform: selectedTransform === 'upperCase' ? 'uppercase' : selectedTransform === 'lowerCase' ? 'lowercase' : 'none',
-                    letterSpacing: `${selectedLetterSpacing}px` // Set the letter spacing here
+                    letterSpacing: `${selectedLetterSpacing}px`, // Set the letter spacing here
+                    wordSpacing: `${selectedWordSpacing}px`,
                 }}>
                     I am Md Gousul Islam Hemonto.
                     I completed my BSc in CSE of Green University of Bangladesh.
